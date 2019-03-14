@@ -18,6 +18,10 @@ target_link_libraries(simple sylvan stdc++)
 include(CheckIncludeFiles)
 check_include_files("gperftools/profiler.h" HAVE_PROFILER)
 
+add_executable(peg-solitaire peg-solitaire.cpp)
+target_link_libraries(peg-solitaire sylvan m pthread)
+set_property(TARGET peg-solitaire PROPERTY C_STANDARD 11)
+
 if(HAVE_PROFILER)
     set_target_properties(mc PROPERTIES COMPILE_DEFINITIONS "HAVE_PROFILER")
     target_link_libraries(mc profiler)
