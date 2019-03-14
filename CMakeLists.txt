@@ -56,7 +56,7 @@ include(CTest)
 add_subdirectory(src)
 add_subdirectory(test)
 
-option(SYLVAN_BUILD_EXAMPLES "Build example tools" OFF)
+option(SYLVAN_BUILD_EXAMPLES "Build example tools" ON)
 if(SYLVAN_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif()
